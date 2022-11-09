@@ -1,0 +1,183 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="weather.css">
+  </head>
+<script src="dailyweatherdata.js"></script>
+<script src="weatherforecast.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.min.js"
+  integrity="sha512-Wt1bJGtlnMtGP0dqNFH1xlkLBNpEodaiQ8ZN5JLA5wpc1sUlk/O5uuOMNgvzddzkpvZ9GLyYNa8w2s7rqiTk5Q=="
+  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+<body>
+    <nav class="navigation">
+      <a href="index.html">Home</a>
+      <a href="submit.php">Submit Form</a>
+      <a href="cv.html">CV</a>
+      <a href="weather.html">Weather</a>
+    </nav>    
+
+    <div class="toggleBox">
+      <a onclick="showMenu()" href="#"><img class="menu" src="menu.png"> <img class="close" src="menu.png"></a>
+    </div>
+
+  <table>
+    <tr>
+      <th>Longitude</th>
+      <th><label id="lon"></label></th>
+    </tr>
+    <tr>
+      <th>Latitude</th>
+      <th><label id="lat"></label></th>
+    </tr>
+    <tr>
+      <th>Humidity</th>
+      <th><label id="humidity"></label></th>
+    </tr>
+    <tr>
+      <th>Average Temperature</th>
+      <th><label id="temp"></label></th>
+    </tr>
+    <tr>
+      <th>Min Temperature</th>
+      <th><label id="min"></label></th>
+    </tr>
+    <tr>
+      <th>Max Temperature</th>
+      <th><label id="max"></label></th>
+    </tr>
+  </table>
+  
+
+  <canvas id="myChart"></canvas>
+
+  <select name="graphs" id="graphs">
+    <option value="1">Temperature</option>
+    <option value="2">Pressure</option>
+    <option value="3">Humidity</option>
+  </select>
+
+  <canvas id="barChart"></canvas>
+</body>
+
+<script>
+  //TODO: Task 1:
+  var daily = JSON.parse(dailydata_stoke);
+  document.getElementById('lon').innerHTML = daily.coord.lon;
+  document.getElementById('lat').innerHTML = daily.coord.lat;
+
+  document.getElementById("humidity").innerHTML = daily.main.humidity + "%";
+  document.getElementById("temp").innerHTML = daily.main.temp + "C";
+  document.getElementById("max").innerHTML = daily.main.temp_max + "C";
+  document.getElementById("min").innerHTML = daily.main.temp_min + "C";
+
+
+  //TODO: Task 2, 3 and 4
+  var forecast = JSON.parse(forecast_stoke);
+  var forecastLondon = JSON.parse(forecast_london);
+  this.dateList = forecast.list.map(list => {
+    return list.dt_txt;
+  });
+
+  this.temperatureList = forecast.list.map(list => {
+    return list.main.temp;
+  });
+
+  this.temperatureListLondon = forecastLondon.list.map(list => {
+    return list.main.temp;
+  });
+
+  this.humidityList = forecast.list.map(list =>{
+    return list.main.humidity;
+  });
+
+  this.pressurelist = forecast.list.map(list =>{
+    return list.main.pressure;
+  });
+
+  var ctx = document.getElementById('myChart').getContext('2d');
+  let chart = new Chart(ctx, {
+    type: "line",
+    data: {
+      labels: this.dateList,
+      datasets: [
+        
+      ]
+    }
+  })
+
+  alert("Select a graph from the dropdown box to show");
+
+  let dropdown = document.getElementById("graphs");
+
+  dropdown.addEventListener('change', (event) => {
+    switch(document.getElementById('graphs').value) {
+      case "1":
+        chart.data.datasets = [{
+            label: "Temperature",
+            backgroundColor: "red",
+            borderColor: "red",
+            fill: false,
+            data: this.temperatureList
+          }];
+        chart.update();
+        console.log("Temp");
+      break;
+      case "2":
+        chart.data.datasets= [{
+            label: "Pressure",
+            backgroundColor: "lightblue",
+            borderColor: "blue",
+            fill: false,
+            data: this.pressurelist
+          }];
+        chart.update();
+        console.log("Pressure");
+      break;
+      case "3":
+        chart.data.datasets = [{
+            label: "Humidity",
+            backgroundColor: "green",
+            borderColor: "green",
+            fill: false,
+            data: this.humidityList
+          }];
+        chart.update();
+        console.log("Humidity");
+      default:
+    }
+  });
+
+
+  var btx = document.getElementById('barChart').getContext('2d');
+  let barChart = new Chart(btx, {
+    type: "bar",
+    data: {
+      labels: this.dateList,
+      datasets: [{
+            label: "Temperature - Stoke(C)",
+            backgroundColor: "pink",
+            borderColor: "red",
+            fill: false,
+            data: this.temperatureList
+          },
+          {
+            label: "Temperature - London (C)",
+            backgroundColor: "lightBlue",
+            borderColor: "blue",
+            fill: false,
+            data: this.temperatureListLondon
+          }
+
+        
+      ]
+    }
+  })
+
+
+
+
+
+</script>
+
+</html>

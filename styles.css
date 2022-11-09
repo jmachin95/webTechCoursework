@@ -1,0 +1,138 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+nav.navigation{
+    display: none;
+    padding: 30px;
+}
+
+nav.navigation.active{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: whitesmoke;
+}
+
+nav.navigation a{
+    padding: 5px 20px 5px 20px;
+    font-size: 20px;
+    color: black;
+    transition: color 0.5s;
+}
+
+nav.navigation a:hover{
+    color: rgb(121, 121, 121);
+}
+
+.toggleBox a img{
+    filter: invert(0);
+    z-index: 1000;
+    padding: 20px;
+}
+
+img.menu.hide{
+    display: none;
+}
+
+img.close{
+    display: none;
+}
+
+img.close.show{
+    display: flex;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+header{
+    background-image: url("background.jpg");
+    background-size: cover;
+    height: 100vh;
+
+}
+
+.introduction{
+    text-align: left;
+    padding: 20px;
+    width: 70%;
+    margin: auto;
+}
+
+.introduction h1{
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: left;
+}
+
+.scroll{
+    text-align: center;
+    padding-top: 80px;
+}
+
+.scroll #scrollButton{
+    background-color: transparent;
+    color: black;
+    padding: 5px;
+    border: solid black 2px;
+    border-radius: 8px;
+}
+
+.scroll #scrollButton:hover{
+    background-color: grey;
+    cursor: pointer;
+}
+
+#cv img, #form img, #weather img{
+    width: 40%;
+    padding: 30px;
+}
+
+#cv img:hover, #form img:hover, #weather img:hover{
+    filter: brightness(40%);
+}
+
+#cv h1, #form h1, #weather h1, #cv p, #form p, #weather p{
+    padding: 30px;
+    text-align: center;
+}
+
+
+@media only screen and (min-width: 991px){
+    nav.navigation{
+        display: flex;
+        justify-content: center;
+        margin: auto;
+    }
+    
+    div.toggleBox{
+        display: none;
+    }
+
+    .row{
+        flex-direction: row;
+    }
+
+
+    .column{
+        width: 50%;
+    }
+}
