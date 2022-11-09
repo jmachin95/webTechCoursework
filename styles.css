@@ -115,6 +115,11 @@ header{
     text-align: center;
 }
 
+#cv, #weather, #form{
+    text-align: center;
+}
+
+
 
 @media only screen and (min-width: 991px){
     nav.navigation{
