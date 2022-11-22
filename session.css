@@ -1,0 +1,59 @@
+body{
+    background-color: black;
+    font-family: 'Source Code Pro', monospace;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    color: white;
+    padding: 20px;
+    
+}
+
+label{
+    text-align: left;
+    padding: 10px 0px;
+}
+
+input{
+    padding: 10px;
+    margin-bottom: 30px;
+    font-family: 'Source Code Pro', monospace;
+    color: black;
+}
+
+button{
+    background-color: whitesmoke;
+    border-radius: 8px;
+    padding: 5px 10px;
+    align-items: center;
+}
+
+.row{
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(54, 53, 53);
+    width: 50%;
+    height: 40%;
+    color: white;
+    border-radius: 8px;
+    margin: auto;
+    margin-top: 20%;
+}
+
+.column{
+    width: 50%;
+    float: left;
+}
+
+p{
+    padding-top: 15px;
+}
+
+ul{
+    padding: 10px 15px;
+}
+
+li{
+    padding: 5px;
+}

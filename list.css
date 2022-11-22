@@ -1,0 +1,33 @@
+body{
+    background-color: black;
+    font-family: 'Source Code Pro', monospace;
+    color: white;
+    text-align: center;
+}
+
+#recordTable{
+    background-color: grey;
+    margin: 50px;
+    color: white;
+}
+
+#recordTable tr{
+    border-collapse: collapse;
+}
+
+button{
+    background-color: whitesmoke;
+    border-radius: 8px;
+    padding: 5px 10px;
+    align-items: center;
+    color: black;
+    margin: 20px;
+}
+
+a{
+    color: white;
+}
+
+a:hover{
+    color: black;
+}
