@@ -8,12 +8,16 @@ html{
 }
 
 body{
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Source Code Pro', monospace;
+    color: black;
+    background-color: rgb(10, 10, 10);
 }
+
+
 
 nav.navigation{
     display: none;
-    padding: 30px;
+    padding-top: 20px;
 }
 
 nav.navigation.active{
@@ -22,8 +26,6 @@ nav.navigation.active{
     align-items: center;
     flex-direction: column;
     position: absolute;
-    left: 0px;
-    top: 0px;
     width: 100%;
     height: 100%;
     background-color: whitesmoke;
@@ -64,9 +66,9 @@ a{
 }
 
 header{
-    background-image: url("background.jpg");
-    background-size: cover;
-    height: 100vh;
+    background-image: url("images/background.jpg");
+    background-size:cover;
+    height: 120vh;
 
 }
 
@@ -91,7 +93,7 @@ header{
 .scroll #scrollButton{
     background-color: transparent;
     color: black;
-    padding: 5px;
+    padding: 10px 20px 10px 20px;
     border: solid black 2px;
     border-radius: 8px;
 }
@@ -101,22 +103,49 @@ header{
     cursor: pointer;
 }
 
-#cv img, #form img, #weather img{
+#cv img, #form img, #weather img, #login img{
     width: 40%;
     padding: 30px;
+    transition: width 0.5s;
 }
 
-#cv img:hover, #form img:hover, #weather img:hover{
+#cv img:hover, #form img:hover, #weather img:hover, #login img:hover{
     filter: brightness(40%);
+    width: 50%;
 }
 
-#cv h1, #form h1, #weather h1, #cv p, #form p, #weather p{
+#cv h1, #form h1, #weather h1, #login h1, #cv p, #form p, #weather p, #login p{
     padding: 30px;
     text-align: center;
 }
 
-#cv, #weather, #form{
+#cv, #weather, #form, #login{
     text-align: center;
+    color: white;
+    background-image: linear-gradient(to bottom, rgba(10, 10, 10, 0.7), rgba(30, 30, 30, 0.73)), 
+    url("images/rock.jpg");
+    background-size: cover;
+    border-radius: 20px;
+    height: 80vh;
+    margin: 40px;
+    margin-top: 150px;
+}
+
+.container{
+    padding: 50px 50px;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.container h1{
+    padding: 50px;
+}
+
+.container p{
+    width: 70%;
+    margin: auto;
+    padding-bottom: 50px;
 }
 
 
@@ -134,10 +163,19 @@ header{
 
     .row{
         flex-direction: row;
+        text-align: center;
+        align-items: flex-end;
+        background-color: transparent;
     }
 
 
-    .column{
+    .col-2{
         width: 50%;
+        float: left;
+        height: 100vh;
+    }
+
+    #cv, #weather, #form, #login{
+        margin-top: 30px;
     }
 }

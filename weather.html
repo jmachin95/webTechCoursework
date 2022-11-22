@@ -1,6 +1,9 @@
 <html>
   <head>
     <link rel="stylesheet" href="weather.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200&display=swap" rel="stylesheet"> 
   </head>
 <script src="dailyweatherdata.js"></script>
 <script src="weatherforecast.js"></script>
@@ -21,6 +24,15 @@
       <a onclick="showMenu()" href="#"><img class="menu" src="menu.png"> <img class="close" src="menu.png"></a>
     </div>
 
+    <script>
+      function showMenu(){
+          document.querySelector('.navigation').classList.toggle('active');
+          
+          document.querySelector('.menu').classList.toggle('hide');
+          document.querySelector('.close').classList.toggle('show');
+      }
+  </script>
+
   <table>
     <tr>
       <th>Longitude</th>
@@ -35,7 +47,7 @@
       <th><label id="humidity"></label></th>
     </tr>
     <tr>
-      <th>Average Temperature</th>
+      <th>Avg Temperature</th>
       <th><label id="temp"></label></th>
     </tr>
     <tr>

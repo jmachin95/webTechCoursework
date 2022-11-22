@@ -5,6 +5,10 @@
         <link rel="stylesheet" type="text/css" href="cv.css">
         <script src="https://kit.fontawesome.com/3fdbb9d7c0.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+    
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200&display=swap" rel="stylesheet"> 
     </head>
     <body>
 
@@ -16,13 +20,22 @@
         </nav>    
         
         <div class="toggleBox">
-            <a onclick="showMenu()" href="#"><img class="menu" src="menu.png"> <img class="close" src="menu.png"></a>
+            <a onclick="showMenu()" href="#"><img class="menu" src="images/menu.png"> <img class="close" src="images/menu.png"></a>
         </div>
+
+        <script>
+            function showMenu(){
+                document.querySelector('.navigation').classList.toggle('active');
+                
+                document.querySelector('.menu').classList.toggle('hide');
+                document.querySelector('.close').classList.toggle('show');
+            }
+        </script>
 
         <div class="row">
 
             <div class="column" id="greyColumn">
-                <img src="profile.jpg">
+                <img src="images/profile.jpg">
         
                 <div class="contactInformation">
                     <ul>          

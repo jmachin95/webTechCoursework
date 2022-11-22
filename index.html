@@ -6,19 +6,26 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Maven+Pro&display=swap" rel="stylesheet">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@200&display=swap" rel="stylesheet"> 
     </head>
 
     <body>
         <header>
+            
             <nav class="navigation">
                 <a href="index.html">Home</a>
-                <a href="submit.php">Submit Form</a>
-                <a href="cv.html">CV</a>
-                <a href="weather.html">Weather</a>
-            </nav>    
+                <a href="#form">Submit Form</a>
+                <a href="#cv">CV</a>
+                <a href="#weather">Weather</a>
+                <a href="#login">Login</a>
+            </nav>   
+                
             
             <div class="toggleBox">
-                <a onclick="showMenu()" href="#"><img class="menu" src="menu.png"> <img class="close" src="menu.png"></a>
+                <a onclick="showMenu()" href="#"><img class="menu" src="images/menu.png"> <img class="close" src="images/menu.png"></a>
             </div>
             
 
@@ -37,7 +44,9 @@
                 <h1>Jack Machin - 21014239</h1>
                 <p>This is my coursework web page for Web Technologies. On this page, 
                     there are links to various other pages completed as part of the 
-                    coursework for this module.
+                    coursework for this module. Please click links at the top of the 
+                    page scroll down to visit each section, then page image to visit 
+                    each site.
                 </p>
 
 
@@ -49,33 +58,59 @@
 
         </header>
 
-        <div id="form">
-            <h1>Submission Form</h1>
-            <p>This is a web page created to submit and store publication and school details in a file. 
-                The web page "list.php" lists all the stored details and the web page "display.php" displays 
-                a single record to the user. These pages are linked together. 
+        <div class="container">
+
+            <h1>Projects</h1>
+            <p>Below are the completed projects for this module's coursework. I have 
+                attempted to keep the dark, theme throughout the work.  
             </p>
-            <a href="http://www.teach.scam.ac.uk/x5z47/submit.php"><img src="cv.png" class="cvImg"></a>
-        </div>
 
-        <div id="cv">
-            <h1>CV</h1>
-            <p>This is a CV made from the perspective of someone looking for a  web 
-                developer role. The CV has the same monochromatic black, white, grey 
-                colour scheme and includes skills, langauges, interests, social media, 
-                a profile and education.</p>
-            <a href="cv.html"><img src="cv.png" class="cvImg"></a>
+            <div class="row">
+                <div class="col-2">
+                    <div id="form">
+                        <h1>Submission Form</h1>
+                        <p>This is a web page created to submit and store publication and school details in a file. 
+                            The web page "list.php" lists all the stored details and the web page "display.php" displays 
+                            a single record to the user. These pages are linked together. 
+                        </p>
+                        <a href="https://www.teach.scam.keele.ac.uk/prin/x5z47/submit.php"><img src="images/submit.png" class="cvImg"></a>
+                    </div>
+            
+                </div>
+                <div class="col-2">
+                    <div id="cv">
+                        <h1>CV</h1>
+                        <p>This is a CV made from the perspective of someone looking for a  web 
+                            developer role. The CV has the same monochromatic black, white, grey 
+                            colour scheme and includes skills, langauges, interests, social media, 
+                            a profile and education.</p>
+                        <a href="cv.html"><img src="images/cv.png" class="cvImg"></a>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="row">
+                <div class="col-2">
+                    <div id="weather">
+                        <h1>Weather Charts</h1>
+                        <p>This is a Web appliation made using JavaScript to show 
+                            the weather conditions in Stoke-On-Trent and London on specific days. The application 
+                            uses ChartJS and JSON to create 2 different types of graph.
+                        </p>
+                        <a href="weather.html"><img src="images/weather.png" class="weatherImg"></a>
+                    </div>
+                </div>
+                <div class="col-2">
+                    <div id="login">
+                        <h1>Login System</h1>
+                        <p>This web application is made using PHP. It is a system to login either as an admin or non-admin 
+                            and the information is verified and stored in a file. 
+                        </p>
+                        <a href="https://www.teach.scam.keele.ac.uk/prin/x5z47/session.php"><img src="images/login.png" class="loginImg"></a>
+                    </div>
+                </div>
+            </div>
         </div>
-
-        <div id="weather">
-            <h1>Weather Charts</h1>
-            <p>This is a Web appliation made using HTML, CSS and JavaScript to receive and show 
-                the weather conditions in Stoke-On-Trent and London on specific days. The application 
-                uses ChartJS and JSON to create 2 different types of graph.
-            </p>
-            <a href="weather.html"><img src="weather.png" class="weatherImg"></a>
-        </div>
-
 
     </body>
 </html>

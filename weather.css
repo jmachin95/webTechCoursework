@@ -4,12 +4,22 @@
 }
 
 body{
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Source Code Pro', monospace;
+    color: white;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: auto;
+    padding: 20px;
+    padding-top: 0;
+    height: 200vh;
 }
 
 nav.navigation{
     display: none;
-    padding: 30px;
+    padding-top: 20px;
+    margin: auto;
 }
 
 nav.navigation.active{
@@ -28,7 +38,7 @@ nav.navigation.active{
 nav.navigation a{
     padding: 5px 20px 5px 20px;
     font-size: 20px;
-    color: black;
+    color: white;
     transition: color 0.5s;
 }
 
@@ -56,21 +66,35 @@ img.close.show{
 
 a{
     text-decoration: none;
-    color: black;
+    color: white;
 }
 
-body{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    margin: auto;
-    padding: 20px;
-}
 
 canvas {
     width: 1000px !important;
     height: 400px !important;
-    padding: 50px;
+    padding: 30px;
+    background-color: rgb(192, 192, 192);
+    margin: auto;
+}
+
+table{
+    padding: 30px;
+    text-align: left;
+    width: 40%;
+    margin: auto;
+    border: solid white 2px;
+}
+
+
+select{
+    background-color: whitesmoke;
+    border-radius: 8px;
+    padding: 5px 10px;
+    align-items: center;
+    margin: 0px 30px;
+    width: 150px;
+    margin: auto;
 }
 
 @media only screen and (min-width: 991px){
